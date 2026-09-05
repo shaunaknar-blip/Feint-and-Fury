@@ -17,7 +17,7 @@ def main():
         level = input('Choose a difficulty level between 1 - 3 '
                       '\n 1 - Easy\n 2 - Medium \n 3 - Hard\n Enter: ')
         if level == '1':
-          inventory = ['Strength Potion','Strength Potion','Strength Potion',
+          inventorylist = ['Strength Potion','Strength Potion','Strength Potion',
                        'Strength Potion','Health Potion','Health Potion',
                        'Health Potion','Health Potion',]
           # in each difficulty level you get a set no. of health and strength potions.Higher the difficulty lesser the potions given.
@@ -29,7 +29,7 @@ def main():
           print(f'You chose difficulty level {level}')
           break
         elif level == '2':
-            inventory = ['Strength Potion','Strength Potion','Strength Potion',
+            inventorylist = ['Strength Potion','Strength Potion','Strength Potion',
                          'Health Potion','Health Potion','Health Potion',]
             hpp = 60
             hpc = 70
@@ -37,7 +37,7 @@ def main():
             print(f'You chose difficulty level {level}')
             break
         elif level == '3':
-            inventory = ['Strength Potion','Strength Potion',
+            inventorylist = ['Strength Potion','Strength Potion',
                          'Health Potion','Health Potion',]
             hpp = 50
             hpc = 90
@@ -71,13 +71,13 @@ def main():
 
         #this invokes the inventory module.  
         elif (a.lower()).strip() == 'inventory':
-            print(f'\nINVENTORY:\nHealth Potions - {inventory.count('Health Potion')}\nStrength Potion - {inventory.count('Strength Potion')}\n')
+            print(f'\nINVENTORY:\nHealth Potions - {inventorylist.count('Health Potion')}\nStrength Potion - {inventorylist.count('Strength Potion')}\n')
             # displays your inventory before using something
             
-            strength, hpp, inventory = Inventory.invent(strength, hpp, inventory)
+            strength, hpp, inventorylist = inventory.invent(strength, hpp, inventorylist)
             # this assigns health, strenght, and inventory their values after the execution of the inent function
             
-            print(f'\nINVENTORY:\nHealth Potions - {inventory.count('Health Potion')}\nStrength Potion - {inventory.count('Strength Potion')}\n')
+            print(f'\nINVENTORY:\nHealth Potions - {inventorylist.count('Health Potion')}\nStrength Potion - {inventorylist.count('Strength Potion')}\n')
             # displays your inventory after using something
             
         elif (a.lower()).strip() == 'end' or (a.lower()).strip() == 'endgame': # this line ends the game
